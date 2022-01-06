@@ -1,0 +1,144 @@
+#ifndef CCAMERA_H
+#define CCAMERA_H
+
+#include <comutil.h>
+#include <hfv.h>
+#include <CHfvTypes.h>
+
+class CCameraFactory;
+class CCamera 
+{
+public:
+	//创建相机，成功返回TRUE，失败返回FALSE
+	virtual BOOL Create(int nBoard, int nPort) = 0;
+
+	//获取相机分辨率
+	virtual CSize GetCameraSize() const = 0;
+
+	//抓图
+	//pImage为缓冲区首地址；
+	//index为抓图序号，在多次抓图时时配合光源控制器设置
+	virtual BOOL Snap( BYTE *pImage, int index /*= 0*/) = 0;
+	//virtual BOOL Snap(CHfvImage& image)=0;
+
+	//曝光
+	//index为抓图序号，在多次抓图时时配合光源控制器设置
+	virtual BOOL StartExpose(int index = 0){return FALSE;};
+
+	//曝光后等待抓图结束，图象数据放在缓冲区中，用StartSnap获取图象数据
+	virtual BOOL WaiteSnapOk(){return FALSE;};
+
+	//asynchronism snap one image
+	//异步抓图，获取前面保存在缓冲区中的图象数据
+	virtual BOOL StartSnap(BYTE *pImage, int index = 0){return FALSE;};
+
+	//打开光源
+	//index为抓图序号
+	virtual void TurnOnLighting(int index = 0) = 0;
+
+	//关闭光源
+	//index为抓图序号
+	virtual void TurnOffLighting(int index = 0) = 0;
+
+	//Return true if camera is in live mode
+	//相机是否在live状态
+	virtual BOOL IsCameraLive() = 0;
+
+	//Set camera in live mode or stop live mode
+	//Since one camera can snap several images in one cycle, nImageIndex is used to
+	//specify which image is going to be shown in view.it's ignored when stopping living mode
+	//设置相机live状态
+	virtual BOOL SetCameraLive(BOOL bCameraLive) = 0;
+
+	//设置相机live显示的回调函数
+	virtual void SetCameraLiveCallback(BOOL (*pfnCameraLive)(LPVOID),PVOID pUserData) = 0;
+
+	//设置相机gain和offset
+	virtual BOOL SetAttribute(const _variant_t& varGain,const _variant_t& varOffset )=0;
+	//获取相机gain和offset
+	virtual BOOL GetAttribute(_variant_t& varGain,_variant_t& varOffset )=0;
+
+	//获取相机gain的范围
+	virtual void GetGainRange(INT& nMin, INT& nMax) const=0;
+	//获取相机offset的范围
+	virtual void GetOffsetRange(INT& nMin, INT& nMax) const =0;
+
+	//获取相机gain的调节步进值
+	virtual _variant_t GetGainStep() const =0;
+	//获取相机offset的调节步进值
+	virtual _variant_t GetOffsetStep() const =0;
+
+	//获取相机gain的默认值
+	virtual _variant_t GetGainDefault() const =0;
+	//获取相机offset的默认值
+	virtual _variant_t GetOffsetDefault() const =0;
+
+	//设置相机属性，包括但不限于“Logger”，“CameraLabel”，“Lighting” 等
+	virtual int SetAttribute(htstring key,const _variant_t &value) = 0;
+	//获取相机属性
+	virtual int GetAttribute(htstring key,_variant_t &value) = 0;
+
+	//相机是否可用
+	BOOL IsValid() { return m_bValid; }
+	void SetValidFlag(BOOL bValid ) { m_bValid = bValid; }
+
+	//获取相机的工厂
+	CCameraFactory* GetFactory() const
+	{
+		return m_pFactory;
+	}
+
+protected:
+	// Constructor
+	CCamera():m_bValid(FALSE),m_pFactory(NULL)
+	{
+	}
+
+	virtual ~CCamera(){};
+// Attributes
+protected:
+	BOOL	m_bValid;
+	CCameraFactory *m_pFactory;
+
+	friend class CCameraFactory;
+};
+
+class CCameraFactory
+{
+public:
+	virtual CCamera* CreateCamera(int nCamBoard,int nCamPort) = 0;
+	virtual void ReleaseCamera(CCamera* pCamera) = 0;
+	virtual void ReleaseAllCamera() = 0;
+
+	virtual int SetAttribute(LPCTSTR key,const _variant_t &value) = 0;
+	virtual int GetAttribute(LPCTSTR key,_variant_t &value) = 0;
+
+protected:
+	void iSetCameraFactory(CCamera* pCamera)
+	{
+		if (pCamera)
+		{
+			pCamera->m_pFactory = this;
+		}
+	}
+
+	void iReleaseCamera(CCamera* pCamera)
+	{
+		delete pCamera;
+	}
+};
+
+class ILogger
+{
+public:
+	typedef enum{
+		eLogWarnning,
+		eLogError,		
+	}LogType;
+
+	virtual void AddMessage(LogType type,htstring msg) = 0;
+};
+
+typedef CCameraFactory* (*IFactoryInterface)(void);
+
+#endif

@@ -1,0 +1,278 @@
+====3D Lead Learn Data (4 Side) Record====
+
+2021-08-14,11:27:56
+应用
+
+
+
+
+====System Summary Setting Record====
+
+2021-08-14,11:46:28
+方向
+         报警：	             0
+       合格率：	      99.00000
+     开始计算：	           200
+     二次计算：	           500
+字符
+         报警：	             0
+       合格率：	      99.00000
+     开始计算：	           200
+     二次计算：	           500
+引脚
+         报警：	             0
+       合格率：	      99.00000
+     开始计算：	           200
+     二次计算：	           500
+编带
+         报警：	             0
+       合格率：	      99.00000
+     开始计算：	           200
+     二次计算：	           500
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-08-14,13:04:02
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-08-14,14:32:03
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-08-14,14:32:41
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-08-14,15:32:43
+应用
+
+
+
+
+====System system Running Setting Record====
+
+2021-08-14,16:34:44
+连续废品停止检测：	          Never
+     连续废品数	             2
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-08-15,22:43:15
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-08-15,22:44:00
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-08-16,10:01:07
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-08-19,11:28:47
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-08-19,12:51:25
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-08-19,14:39:42
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-08-19,17:08:13
+应用
+
+
+
+
+====System Summary Setting Record====
+
+2021-08-20,10:30:06
+方向
+         报警：	             0
+       合格率：	      99.00000
+     开始计算：	           200
+     二次计算：	           500
+字符
+         报警：	             0
+       合格率：	      99.00000
+     开始计算：	           200
+     二次计算：	           500
+引脚
+         报警：	             0
+       合格率：	      99.00000
+     开始计算：	           200
+     二次计算：	           500
+编带
+         报警：	             0
+       合格率：	      99.00000
+     开始计算：	           200
+     二次计算：	           500
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-08-30,11:24:10
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-09-03,10:45:18
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-09-04,13:33:42
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-09-09,12:55:45
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-09-16,15:48:14
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-09-17,15:18:24
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-11-01,04:44:31
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-11-01,14:41:05
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-11-28,11:07:53
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-12-12,02:46:56
+应用
+
+
+
+
+====System Summary Setting Record====
+
+2021-12-15,10:50:40
+方向
+         报警：	             0
+       合格率：	      99.00000
+     开始计算：	           200
+     二次计算：	           500
+字符
+         报警：	             0
+       合格率：	      99.00000
+     开始计算：	           200
+     二次计算：	           500
+引脚
+         报警：	             0
+       合格率：	      99.00000
+     开始计算：	           200
+     二次计算：	           500
+编带
+         报警：	             0
+       合格率：	      99.00000
+     开始计算：	           200
+     二次计算：	           500
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-12-24,02:37:36
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-12-24,02:39:02
+应用
+
+
+
+
+====3D Lead Learn Data (4 Side) Record====
+
+2021-12-24,02:42:21
+应用
+
+
+
+
